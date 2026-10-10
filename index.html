@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание gooey-эффекта</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="buttons-wrapper">
+            <button class="button button--main" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="35" height="35">
+                    <path class="bottom" d="M145 609l609 0c74,0 74,111 0,111l-609 0c-74,0 -74,-111 0,-111z" fill="currentColor"></path>
+                    <path class="middle" d="M146 394c203,0 406,0 609,0 74,0 74,111 0,111 -203,0 -406,0 -609,0 -74,0 -74,-111 0,-111z" fill="currentColor"></path>
+                    <path class="top" d="M146 179l609 0c74,0 74,111 0,111l-609 0c-74,0 -74,-111 0,-111z" fill="currentColor"></path>
+                </svg>
+            </button>
+
+            <button class="button" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" width="35" height="35">
+                    <polygon points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 10.288,52.549 13.467,34.013 0,20.887 18.611,18.182" fill="currentColor"/>
+                </svg>
+            </button>
+
+            <button class="button" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="35" height="35">
+                    <circle cx="256" cy="256" r="64" fill="currentColor"/>
+                    <path d="M490.84,238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349,110.55,302,96,255.66,96c-42.52,0-84.33,12.15-124.27,36.11C90.66,156.54,53.76,192.23,21.71,238.18a31.92,31.92,0,0,0-.64,35.54c26.41,41.33,60.4,76.14,98.28,100.65C162,402,207.9,416,255.66,416c46.71,0,93.81-14.43,136.2-41.72,38.46-24.77,72.72-59.66,99.08-100.92A32.2,32.2,0,0,0,490.84,238.6ZM256,352a96,96,0,1,1,96-96A96.11,96.11,0,0,1,256,352Z" fill="currentColor"/>
+                </svg>
+            </button>
+
+            <button class="button" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172" width="35" height="35">
+                    <g>
+                        <path d="M166.797,25.078h-13.672h-29.971V0H49.388v25.078H19.417H5.744v15h14.806l10,132.463h111.443l10-132.463h14.805V25.078z M64.388,15h43.766v10.078H64.388V15z M128.083,157.541H44.46L35.592,40.078h13.796h73.766h13.796L128.083,157.541z" fill="currentColor"/>
+                        <rect x="80.271" y="65.693" fill="currentColor" width="12" height="66.232"/>
+                        <rect x="57.271" y="65.693" fill="currentColor" width="12" height="66.232"/>
+                        <rect x="103.271" y="65.693" fill="currentColor" width="12" height="66.232"/>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="gooey-filter" x="-80" width="600" height="300">
+                <!-- примитивы -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="over" />
+            </feMerge>
+            </filter>
+        </defs>
+    </svg>
+    <script src="script.js"></script>
+</body>
+</html>

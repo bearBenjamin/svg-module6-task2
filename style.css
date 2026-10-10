@@ -1,0 +1,71 @@
+:root {
+    --transition: 1.5s cubic-bezier(0.155, 0.83, 0.41, 1);
+}
+
+html, body {
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.buttons-wrapper {
+    position: relative;
+    width: 1000px;
+    height: 100px;
+    filter:url('#gooey-filter');
+}
+
+.button {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: 0;
+    width: 80px;
+    height: 80px;
+    transition: transform var(--transition);
+    border-radius: 50%;
+    border: 0;
+    background-color: #673ab7;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.button--main {
+    z-index: 2;
+}
+
+svg path {
+    transform-origin: center;
+    transform-box: fill-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.active .middle {
+    opacity: 0;
+}
+
+.active .top {
+    transform: translateY(215px) rotate(45deg);
+}
+
+.active .bottom {
+    transform: translateY(-215px) rotate(-45deg);
+}
+
+.buttons-wrapper.active .button:nth-child(2) {
+  transform: translateX(120px); /* Звезда встает первой */
+}
+
+.buttons-wrapper.active .button:nth-child(3) {
+  transform: translateX(240px); /* Глаз встает вторым */
+}
+
+.buttons-wrapper.active .button:nth-child(4) {
+  transform: translateX(360px); /* Корзина встает третьей */
+}
