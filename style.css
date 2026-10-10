@@ -1,5 +1,5 @@
 :root {
-    --transition: 1.5s cubic-bezier(0.155, 0.83, 0.41, 1);
+    --transition: 0.5s cubic-bezier(0.155, 0.83, 0.41, 1);
 }
 
 html, body {
@@ -40,6 +40,10 @@ html, body {
     z-index: 2;
 }
 
+.button--main:hover {
+    transform: scale(1.1);
+}
+
 svg path {
     transform-origin: center;
     transform-box: fill-box;
@@ -59,13 +63,16 @@ svg path {
 }
 
 .buttons-wrapper.active .button:nth-child(2) {
-  transform: translateX(120px); /* Звезда встает первой */
+  transform: translateX(110px); /* Звезда встает первой */
+  transition-duration: 1s;
 }
 
 .buttons-wrapper.active .button:nth-child(3) {
-  transform: translateX(240px); /* Глаз встает вторым */
+  transform: translateX(220px); /* Глаз встает вторым */
+  transition-duration: 2s;
 }
 
 .buttons-wrapper.active .button:nth-child(4) {
-  transform: translateX(360px); /* Корзина встает третьей */
+  transform: translateX(330px); /* Корзина встает третьей */
+  transition-duration: 3s;
 }
